@@ -11,30 +11,11 @@ function createCustomLogger(BaseLogger) {
   class CustomLogger extends BaseLogger {
     constructor(prefix = "") {
       super();
+
       if (globalInstance) {
         globalInstance.prefix = prefix;
         return globalInstance;
       }
-
-      // 獲取 winston logger 實例
-      const winstonLogger = this._getLogger();
-
-      // 保存原始的 log 方法
-      const originalLog = winstonLogger.log.bind(winstonLogger);
-
-      // 重寫 log 方法來監聽所有日誌
-      winstonLogger.log = (level, message, ...args) => {
-        // 輸出原始日誌內容
-        console.log("[BaseLogger 攔截]", {
-          level,
-          message,
-          args,
-          timestamp: new Date().toISOString(),
-        });
-
-        // 調用原始方法
-        return originalLog(level, message, ...args);
-      };
 
       this.prefix = prefix;
       globalInstance = this;
@@ -47,12 +28,38 @@ function createCustomLogger(BaseLogger) {
   }
 
   CustomLoggerClass = CustomLogger;
+
   return {
     CustomLogger,
     instance: globalInstance,
   };
 }
 
+function checkInitialized() {
+  if (!globalInstance)
+    throw new Error("Logger not initialized. Please call createCustomLogger first.");
+}
+
 module.exports = {
   createCustomLogger,
+  info: (...args) => {
+    checkInitialized();
+    return globalInstance.info(...args);
+  },
+  error: (...args) => {
+    checkInitialized();
+    return globalInstance.error(...args);
+  },
+  warn: (...args) => {
+    checkInitialized();
+    return globalInstance.warn(...args);
+  },
+  debug: (...args) => {
+    checkInitialized();
+    return globalInstance.debug(...args);
+  },
+  get prefix() {
+    checkInitialized();
+    return globalInstance.prefix;
+  },
 };
