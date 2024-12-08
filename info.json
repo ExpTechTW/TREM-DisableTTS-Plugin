@@ -2,8 +2,8 @@
   "name": "disable_tts",
   "version": "1.0.2",
   "description": {
-    "zh_tw": "禁用 TREM-Lite TTS",
-    "zh-Hant": "禁用 TREM-Lite TTS"
+    "zh_tw": "關閉 TREM-Lite TTS",
+    "zh-Hant": "關閉 TREM-Lite TTS"
   },
   "author": [
     "whes1015"
