@@ -21,8 +21,8 @@ class Plugin {
   }
 
   onLoad() {
-    const { TREM, Logger, logger, MixinManager } = this.#ctx;
-    const { CustomLogger } = require("./src/utils/logger").createCustomLogger(Logger);
+    const { TREM, Logger, logger } = this.#ctx;
+    const { CustomLogger } = require("../logger/logger").createCustomLogger(Logger);
     this.logger = new CustomLogger("disable_tts");
 
     this.logger.info("Initialization completed!");

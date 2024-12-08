@@ -1,13 +1,19 @@
 {
   "name": "disable_tts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": {
-    "zh_tw": "TREM-Lite Disable TTS Plugin"
+    "zh_tw": "禁用 TREM-Lite TTS",
+    "zh-Hant": "禁用 TREM-Lite TTS"
   },
-  "author": ["whes1015"],
+  "author": [
+    "whes1015"
+  ],
   "dependencies": {
-    "trem": ">=3.0.0"
+    "trem": ">=3.1.0-rc.4",
+    "logger": ">=1.0.0"
   },
-  "resources": ["AGPL-3.0"],
-  "link": "https://github.com/ExpTechTW/TREM-Example-Plugin"
+  "resources": [
+    "AGPL-3.0"
+  ],
+  "link": "https://github.com/ExpTechTW/TREM-DisableTTS-Plugin"
 }
