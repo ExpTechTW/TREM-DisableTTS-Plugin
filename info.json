@@ -1,6 +1,6 @@
 {
   "name": "disable-tts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": {
     "zh_tw": "關閉 TREM-Lite TTS",
     "zh-Hant": "關閉 TREM-Lite TTS"
