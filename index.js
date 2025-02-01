@@ -27,6 +27,12 @@ class Plugin {
 
     this.logger.info("Initialization completed!");
 
+    TREM.variable.speech = {
+      speak    : () => void 0,
+      speaking : () => void 0,
+      cancel   : () => void 0,
+    };
+
     const winstonLogger = logger._getLogger();
 
     winstonLogger.transports.forEach(transport => {
