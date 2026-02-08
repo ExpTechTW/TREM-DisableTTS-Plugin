@@ -1,13 +1,13 @@
 {
   "name": "disable-tts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": {
     "zh_tw": "關閉 TREM-Lite TTS",
     "zh-Hant": "關閉 TREM-Lite TTS"
   },
-  "author": ["whes1015"],
+  "author": ["whes1015","yayacat"],
   "dependencies": {
-    "trem": ">=3.1.1-rc.2",
+    "trem": ">=3.1.8",
     "logger": ">=1.0.0"
   },
   "resources": ["AGPL-3.0"],
